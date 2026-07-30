@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luis E. Bonilla — Product Designer & Creative Technologist</title>
+  <script src="js/theme-init.js"></script>
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&display=swap" rel="stylesheet">
+</head>
+<body class="home-page bg-ink text-warm-white font-sans">
+
+  <!-- ═══════════════════════════════════════════════
+       MONOGRAM
+  ═══════════════════════════════════════════════ -->
+  <a href="./index.html" id="monogram" class="monogram" aria-label="Luis E. Bonilla — Home">
+    <span class="monogram-initial">L</span><span class="monogram-rest"><span class="mono-l">u</span><span class="mono-l">i</span><span class="mono-l">s</span><span class="mono-l"> </span><span class="mono-l">E</span><span class="mono-l">.</span><span class="mono-l"> </span><span class="mono-l">B</span><span class="mono-l">o</span><span class="mono-l">n</span><span class="mono-l">i</span><span class="mono-l">l</span><span class="mono-l">l</span><span class="mono-l">a</span></span>
+  </a>
+  <!-- ═══════════════════════════════════════════════
+       THEME TOGGLE
+  ═══════════════════════════════════════════════ -->
+  <button
+    id="theme-toggle"
+    class="theme-toggle"
+    type="button"
+    aria-label="Switch to light mode">
+    <span class="theme-toggle__track" aria-hidden="true">
+      <span class="theme-toggle__thumb">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4.25"></circle>
+          <path d="M12 2.75v2.2"></path>
+          <path d="M12 19.05v2.2"></path>
+          <path d="M5.46 5.46l1.55 1.55"></path>
+          <path d="M17 17l1.54 1.54"></path>
+          <path d="M2.75 12h2.2"></path>
+          <path d="M19.05 12h2.2"></path>
+          <path d="M5.46 18.54l1.55-1.55"></path>
+          <path d="M17 7l1.54-1.54"></path>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.2 14.3A7.75 7.75 0 1 1 9.7 3.8a6.35 6.35 0 0 0 10.5 10.5Z"></path>
+        </svg>
+      </span>
+    </span>
+  </button>
+
+  <!-- ═══════════════════════════════════════════════
+       SIDEBAR NAV (desktop)
+  ═══════════════════════════════════════════════ -->
+  <nav id="sidebar" aria-label="Page sections" class="sidebar-nav hidden lg:flex flex-col gap-2">
+    <a href="#hero"         class="sidebar-link sidebar-link--active" data-section="hero">Intro</a>
+    <a href="#work-grid"    class="sidebar-link" data-section="work-grid">Work</a>
+    <a href="#values"       class="sidebar-link" data-section="values">Values</a>
+    <a href="#background"   class="sidebar-link" data-section="background">Background</a>
+    <a href="#experience"   class="sidebar-link" data-section="experience">Experience</a>
+    <a href="#references"  class="sidebar-link" data-section="references">References</a>
+    <a href="#about"       class="sidebar-link" data-section="about">About</a>
+    <a href="#contact"      class="sidebar-link" data-section="contact">Contact</a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════
+       HAMBURGER BUTTON (mobile / tablet)
+  ═══════════════════════════════════════════════ -->
+  <button id="menu-btn" class="menu-btn" aria-label="Open menu" aria-expanded="false">
+    <span class="menu-bar"></span>
+    <span class="menu-bar"></span>
+  </button>
+
+  <!-- ═══════════════════════════════════════════════
+       FULL-SCREEN OVERLAY MENU
+  ═══════════════════════════════════════════════ -->
+  <div id="menu-overlay" class="menu-overlay" aria-hidden="true">
+
+    <!-- Close button -->
+    <button id="menu-close" class="menu-close" aria-label="Close menu">
+      <span class="menu-bar menu-bar--close-a"></span>
+      <span class="menu-bar menu-bar--close-b"></span>
+    </button>
+
+    <!-- Nav links — large editorial -->
+    <nav class="menu-overlay-nav" aria-label="Site navigation">
+      <a href="#hero"         class="overlay-link" data-index="0">Intro</a>
+      <a href="#work-grid"    class="overlay-link" data-index="1">Work</a>
+      <a href="#values"       class="overlay-link" data-index="2">Values</a>
+      <a href="#background"   class="overlay-link" data-index="3">Background</a>
+      <a href="#experience"   class="overlay-link" data-index="4">Experience</a>
+      <a href="#references"  class="overlay-link" data-index="5">References</a>
+      <a href="#about"       class="overlay-link" data-index="6">About</a>
+      <a href="#contact"      class="overlay-link" data-index="7">Contact</a>
+    </nav>
+
+    <!-- Bottom meta -->
+    <div class="menu-overlay-meta">
+      <span>hello@luisbonilla.com</span>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       INTRO OVERLAY — Full screen name reveal
+  ═══════════════════════════════════════════════ -->
+  <div id="intro-overlay" class="intro-overlay">
+    <div class="intro-content">
+      <h1 class="intro-name">Luis E. Bonilla</h1>
+      <p class="intro-subtitle">— Designer & Creative Technologist</p>
+    </div>
+  </div>
+<!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+<section id="hero" data-orb-field="hero" data-orb-palette="blue" data-orb-mode="hero-tabs"
+  class="grain orb-field orb-field--hero relative min-h-screen hero-gradient flex flex-col justify-center overflow-hidden">
+
+  <!-- Parallax atmospheric layer (JS transforms the wrapper, gradient is CSS) -->
+  <div id="hero-parallax" class="absolute inset-0 pointer-events-none will-change-transform">
+    <div class="absolute inset-0 atmo-hero"></div>
+  </div>
+
+  <!-- Dot grid — faint structural texture -->
+  <div class="absolute inset-0 pointer-events-none hero-dot-grid"></div>
+
+  <!-- Ambient gradient orbs — above parallax layer -->
+  <div class="orb-field__orb orb-field__orb--a"></div>
+  <div class="orb-field__orb orb-field__orb--b"></div>
+  <div class="orb-field__orb orb-field__orb--c"></div>
+
+
+  <!-- Scroll-fade overlay (JS-driven opacity) -->
+  <div id="hero-fade" class="absolute inset-0 bg-ink pointer-events-none hero-fade-overlay"></div>
+
+  <!-- Content: full-width editorial statement -->
+  <div
+    class="rail-clear relative z-10 mx-auto max-w-7xl w-full flex-1 flex flex-col justify-start pt-40 md:pt-52">
+
+    <!-- Audience selector -->
+    <div class="audience-strip reveal mb-2">
+      <div class="audience-tabs flex gap-2 overflow-x-auto scrollbar-hide pb-1">
+        <button
+          class="audience-tab audience-tab--active flex-shrink-0 text-sm font-medium tracking-label px-4 py-2 rounded-full transition-all duration-300 text-warm-white"
+          data-audience="anyone" data-color="blue">For Everyone</button>
+        <button
+          class="audience-tab flex-shrink-0 text-sm font-medium tracking-label px-4 py-2 rounded-full transition-all duration-300 text-warm-muted"
+          data-audience="recruiters" data-color="teal">Recruiters</button>
+        <button
+          class="audience-tab flex-shrink-0 text-sm font-medium tracking-label px-4 py-2 rounded-full transition-all duration-300 text-warm-muted"
+          data-audience="directors" data-color="violet">Hiring Managers</button>
+        <button
+          class="audience-tab flex-shrink-0 text-sm font-medium tracking-label px-4 py-2 rounded-full transition-all duration-300 text-warm-muted"
+          data-audience="designers" data-color="warm">Designers</button>
+        <button
+          class="audience-tab flex-shrink-0 text-sm font-medium tracking-label px-4 py-2 rounded-full transition-all duration-300 text-warm-muted"
+          data-audience="pms" data-color="teal">Product Managers</button>
+        <button
+          class="audience-tab flex-shrink-0 text-sm font-medium tracking-label px-4 py-2 rounded-full transition-all duration-300 text-warm-muted"
+          data-audience="engineers" data-color="blue">Engineers</button>
+        <button
+          class="audience-tab flex-shrink-0 text-sm font-medium tracking-label px-4 py-2 rounded-full transition-all duration-300 text-warm-muted"
+          data-audience="creative-ai" data-color="violet">AI / Creative Tech</button>
+      </div>
+    </div>
+
+    <!-- Headline — swaps per audience -->
+    <h1 id="hero-headline" class="heading-hero text-warm-white max-w-5xl reveal reveal-delay-1">
+      Hello, I design digital products and systems, and I care about making them feel simple, clear, and easy to use.
+    </h1>
+
+
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-30 pointer-events-none">
+    <div class="hero-scroll-indicator__line w-px h-14 animate-scroll-line"></div>
+  </div>
+</section>
+
+  <!-- ═══════════════════════════════════════════════
+       WORK GRID
+  ═══════════════════════════════════════════════ -->
+  <section id="work-grid" class="w-full overflow-x-hidden reveal">
+    <div class="work-collage-shell">
+      <img
+        src="./assets/img/work_collage.png"
+        alt="Selected work — product design, interaction, and generative systems"
+        width="2874"
+        height="4740"
+        class="work-collage-image">
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       VALUES
+  ═══════════════════════════════════════════════ -->
+  <section id="values" class="values-section bg-ink relative overflow-hidden py-16">
+    <div class="rail-clear values-shell relative z-10 mx-auto max-w-7xl">
+
+      <!-- Values block — tight typographic display -->
+      <div class="values-block space-y-0">
+        <div class="values-row reveal" data-value="useful" data-color="blue">
+          <h3 class="values-word font-bold text-warm-white">Useful</h3>
+          <span class="values-arrow">→</span>
+          <p class="values-support text-2xl md:text-3xl font-normal leading-none">function first</p>
+        </div>
+
+        <div class="values-row reveal reveal-delay-2" data-value="considered" data-color="teal">
+          <h3 class="values-word font-bold text-warm-white">Considered</h3>
+          <span class="values-arrow">→</span>
+          <p class="values-support text-2xl md:text-3xl font-normal leading-none">intentional decisions</p>
+        </div>
+
+        <div class="values-row reveal reveal-delay-4" data-value="beautiful" data-color="warm">
+          <h3 class="values-word font-bold text-warm-white">Beautiful</h3>
+          <span class="values-arrow">→</span>
+          <p class="values-support text-2xl md:text-3xl font-normal leading-none">visual craft</p>
+        </div>
+
+        <div class="values-row reveal reveal-delay-5" data-value="thoughtful" data-color="violet">
+          <h3 class="values-word font-bold text-warm-white">Thoughtful</h3>
+          <span class="values-arrow">→</span>
+          <p class="values-support text-2xl md:text-3xl font-normal leading-none">human layer</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       BACKGROUND
+  ═══════════════════════════════════════════════ -->
+  <section id="background" class="bg-ink relative overflow-hidden py-16">
+    <div class="rail-clear relative z-10 mx-auto max-w-7xl">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+
+        <!-- Row 1: empty left, text right -->
+        <div></div>
+        <div class="reveal">
+          <p class="text-lg md:text-xl font-normal text-warm-muted leading-snug">
+            I started in print, designing album covers, promo, and apparel, shaping visuals that carried identity and mood. That path led me into the web during the Flash era, when design, motion, and code began to blur together. I explored interaction, animation, and front-end work, always grounded in visual thinking and how things feel in motion.
+          </p>
+        </div>
+
+        <!-- Row 2: text left, empty right -->
+        <div class="reveal reveal-delay-1">
+          <p class="text-lg md:text-xl font-normal text-warm-muted leading-snug">
+            Over time, the work shifted. It became less about individual pieces and more about how everything connects. I moved into product design, focusing on structure, systems, and experiences that need to scale and hold together. Today, I bring it all together, using generative tools and AI-assisted coding to design and build products, creative systems, and digital experiences.
+          </p>
+        </div>
+        <div></div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       EXPERIENCE
+  ═══════════════════════════════════════════════ -->
+  <section id="experience" class="rail-clear mx-auto max-w-7xl py-24 md:py-36 overflow-x-hidden">
+
+    <div class="reveal space-y-16">
+
+      <!-- Freelance -->
+      <div class="pb-16 border-b-surface-md">
+        <div class="exp-logo mb-6">
+          <img src="./assets/icons/freelance.svg" alt="Freelance" width="120" height="120">
+        </div>
+        <p class="text-[10px] uppercase tracking-[0.16em] text-warm-dim mb-3">Freelance</p>
+        <h3 class="exp-title text-warm-white mb-2">Creative Technologist</h3>
+        <p class="text-xs text-warm-dim mb-6">Now &middot; Remote</p>
+        <p class="text-base text-warm-muted leading-snug max-w-2xl">Working across product, visual systems, and emerging tools. Combining design, code, and generative workflows to prototype, build, and scale ideas across product, marketing, and digital content.</p>
+      </div>
+
+      <!-- Life Force Academy -->
+      <div class="pb-16 border-b-surface-md">
+        <div class="exp-logo mb-6">
+          <img src="./assets/icons/Life_Force_Academy.svg" alt="Life Force Academy" width="120" height="120">
+        </div>
+        <p class="text-[10px] uppercase tracking-[0.16em] text-warm-dim mb-3">Life Force Academy</p>
+        <h3 class="exp-title text-warm-white mb-2">Lead Product Designer</h3>
+        <p class="text-xs text-warm-dim mb-6">2023–2025 &middot; Nevada City, CA</p>
+        <p class="text-base text-warm-muted leading-snug max-w-2xl">Led the redesign of a wellness learning platform across public and logged-in experiences. Focused on onboarding, membership flows, and content discovery. Introduced a practical design system aligned with engineering. Partnered closely with product and devs in agile cycles to improve clarity, engagement, and flow.</p>
+      </div>
+
+      <!-- Disney Parks -->
+      <div class="pb-16 border-b-surface-md">
+        <div class="exp-logo mb-6">
+          <img src="./assets/icons/Disney.svg" alt="Disney Parks, Experiences & Products" width="120" height="120">
+        </div>
+        <p class="text-[10px] uppercase tracking-[0.16em] text-warm-dim mb-3">Disney Parks, Experiences &amp; Products</p>
+        <h3 class="exp-title text-warm-white mb-2">Senior Product Designer</h3>
+        <p class="text-xs text-warm-dim mb-6">2020–2022 &middot; Orlando, FL</p>
+        <p class="text-base text-warm-muted leading-snug max-w-2xl">Designed large-scale products used by millions of guests. Focused on interaction design, accessibility, and system consistency. Contributed to video playback and account experiences, working closely with research and engineering to test and refine shipped features.</p>
+      </div>
+
+      <!-- Citrix -->
+      <div class="pb-16 border-b-surface-md">
+        <div class="exp-logo mb-6">
+          <img src="./assets/icons/Citrix.svg" alt="Citrix" width="120" height="120">
+        </div>
+        <p class="text-[10px] uppercase tracking-[0.16em] text-warm-dim mb-3">Citrix</p>
+        <h3 class="exp-title text-warm-white mb-2">Product Designer</h3>
+        <p class="text-xs text-warm-dim mb-6">2019–2020 &middot; Remote</p>
+        <p class="text-base text-warm-muted leading-snug max-w-2xl">Designed enterprise dashboards and tools, simplifying complex and fragmented workflows. Contributed to shared components and design patterns, partnering with engineers to ensure consistency and scalability across teams.</p>
+      </div>
+
+      <!-- PwC -->
+      <div class="pb-16 border-b-surface-md">
+        <div class="exp-logo mb-6">
+          <img src="./assets/icons/Pwc.svg" alt="PwC" width="120" height="120">
+        </div>
+        <p class="text-[10px] uppercase tracking-[0.16em] text-warm-dim mb-3">PwC</p>
+        <h3 class="exp-title text-warm-white mb-2">UX/UI Designer &amp; Front-End Developer</h3>
+        <p class="text-xs text-warm-dim mb-6">2016–2018 &middot; Hollywood, FL</p>
+        <p class="text-base text-warm-muted leading-snug max-w-2xl">Designed and built internal tools with a focus on usability and performance. Worked closely with engineering to ensure clean implementation, with strong attention to accessibility and detail.</p>
+      </div>
+
+      <!-- Zimmerman Advertising -->
+      <div class="pb-16 border-b-surface-md">
+        <div class="exp-logo mb-6">
+          <img src="./assets/icons/Zimmerman.svg" alt="Zimmerman Advertising" width="120" height="120">
+        </div>
+        <p class="text-[10px] uppercase tracking-[0.16em] text-warm-dim mb-3">Zimmerman Advertising</p>
+        <h3 class="exp-title text-warm-white mb-2">Lead Digital Creative &amp; Front-End Developer</h3>
+        <p class="text-xs text-warm-dim mb-6">2014–2016 &middot; Fort Lauderdale, FL</p>
+        <p class="text-base text-warm-muted leading-snug max-w-2xl">Led UI and creative for large-scale digital campaigns, including automotive clients. Balanced creative direction with hands-on front-end work, moving fast while keeping execution cohesive across channels.</p>
+      </div>
+
+      <!-- Kaplan University -->
+      <div>
+        <div class="exp-logo mb-6">
+          <img src="./assets/icons/Kaplan.svg" alt="Kaplan University" width="120" height="120">
+        </div>
+        <p class="text-[10px] uppercase tracking-[0.16em] text-warm-dim mb-3">Kaplan University</p>
+        <h3 class="exp-title text-warm-white mb-2">Senior Web Designer</h3>
+        <p class="text-xs text-warm-dim mb-6">2008–2013 &middot; Fort Lauderdale, FL</p>
+        <p class="text-base text-warm-muted leading-snug max-w-2xl">Designed marketing pages and learning tools during the shift to mobile-first. Focused on clarity, consistency, and evolving accessibility standards.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       REFERENCES
+  ═══════════════════════════════════════════════ -->
+  <section id="references" class="rail-clear mx-auto max-w-7xl py-24 md:py-36">
+
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16 reveal">
+
+      <!-- Quote 1 -->
+      <div class="reference-block">
+        <p class="reference-quote">"Luis is an extraordinary creative mind! I had the pleasure of working with him on various projects at Zimmerman. He was always there to help, give great feedback and input, even under tight deadlines! He's a great problem solver and is able to take on the most challenging projects and manage them with ease. He is a joy to work with and an asset to any company."</p>
+        <div class="reference-attribution">
+          <a href="https://www.linkedin.com/in/priscillagiler/" target="_blank" rel="noopener" class="reference-name">Priscilla Giler</a>
+          <span class="reference-sep">|</span>
+          <span class="reference-role">Director of Product Design</span>
+        </div>
+      </div>
+
+      <!-- Quote 2 -->
+      <div class="reference-block">
+        <p class="reference-quote">"Luis is an example of how a kind and resourceful person is like. It is a pleasure to work with such a pleasant personality who always looks at the bright side and tackled every challenge our team faced. One of the people I'll always want to keep on my contact list."</p>
+        <div class="reference-attribution">
+          <a href="https://www.linkedin.com/in/zachtwalker/" target="_blank" rel="noopener" class="reference-name">Zach Walker</a>
+          <span class="reference-sep">|</span>
+          <span class="reference-role">Software Architect</span>
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════════ -->
+  <section id="about" class="rail-clear mx-auto max-w-7xl py-24 md:py-36">
+
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16">
+
+      <!-- Left: empty -->
+      <div></div>
+
+      <!-- Right: bio -->
+      <div class="reveal">
+        <p class="about-body">
+          With over a decade of experience across product design, visual systems, and creative technology, I've worked on consumer and enterprise products at companies like Disney, Life Force Academy, Citrix, and PwC. I started in print, motion, and front-end, which still shapes how I approach design today. I'm Venezuelan-born, educated in the South, with roots in South Florida and now based in the Bay Area. These experiences have shaped how I see people, culture, and the systems I design for. More recently, my work has expanded into a creative technologist space, using generative tools and AI-assisted coding to prototype and build faster, bringing together visual thinking, structure, and execution across product and creative work. Outside of work, I enjoy being in nature — hiking, time in the woods, and the quiet calm of Florida's beaches.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SELECTED WORK
+       MVP NOTE: Case study cards hidden for launch.
+       Re-enable when case-study pages are ready.
+       See CLAUDE.md § Pending Tasks.
+  ═══════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════════ -->
+<section id="contact" data-orb-field="contact" data-orb-palette="blue"
+  class="grain orb-field orb-field--contact bg-ink relative overflow-hidden py-36 md:py-56">
+  <div class="absolute inset-0 pointer-events-none atmo-cta"></div>
+  <div class="orb-field__orb orb-field__orb--a"></div>
+  <div class="orb-field__orb orb-field__orb--b"></div>
+  <div class="orb-field__orb orb-field__orb--c"></div>
+
+  <div class="rail-clear relative z-10 mx-auto max-w-7xl">
+    <div class="grid md:grid-cols-12 gap-16 items-end">
+
+      <!-- Left: text -->
+      <div class="md:col-span-7 reveal">
+        <p class="text-xs uppercase tracking-label text-warm-dim mb-10">Currently Available</p>
+
+        <h2 class="heading-hero text-warm-white">
+          Let's build<br>something worth<br>designing.
+        </h2>
+
+        <p class="mt-10 max-w-sm text-warm-muted text-base leading-snug">
+          Open to product design, creative technology, and AI-driven experience work.
+        </p>
+
+        <div class="mt-12 flex flex-wrap gap-6 reveal reveal-delay-1">
+          <a href="http://linkedin.com/in/lxexb" target="_blank" rel="noopener noreferrer" class="contact-text-link">
+            LinkedIn
+          </a>
+          <a href="./assets/Luis_Bonilla_Resume.pdf" target="_blank" rel="noopener noreferrer"
+            class="contact-text-link">
+            View R&eacute;sum&eacute;
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: photo -->
+      <div class="md:col-span-5 reveal reveal-delay-2">
+        <div class="contact-photo-wrap relative overflow-hidden rounded-2xl">
+          <video autoplay loop muted playsinline class="w-full block object-cover aspect-[4/5] max-h-[560px]">
+            <source src="./assets/img/Luis.mp4" type="video/mp4">
+            <img src="./assets/img/Luis.jpeg" alt="Luis E. Bonilla"
+              class="w-full block object-cover aspect-[4/5] max-h-[560px]">
+          </video>
+          <div class="absolute inset-0 contact-photo-vignette pointer-events-none"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <p
+    class="absolute right-6 bottom-6 z-10 inline-block w-auto whitespace-nowrap text-right text-[11px] text-warm-dim/50 pointer-events-none md:right-10">
+    © 2026 Design and code by Luis Bonilla
+  </p>
+</section><!-- ═══════════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════════ -->
+<script src="js/reveal.js" defer></script>
+<script src="js/theme-toggle.js" defer></script>
+<script src="js/orb-physics.js" defer></script>
+<script src="js/main.js" defer></script>
+
+</body>
+
+</html>
